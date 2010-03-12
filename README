@@ -1,0 +1,73 @@
+*************************************************************************
+**                                                                     **
+**                            Image 3D Viewer                          **
+**                                                                     **
+**                              README File                            **
+**                                                                     **
+*************************************************************************
+
+    Image 3D Viewer is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Image 3D Viewer is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+Abstract:
+
+A simple 3d image viewer in OpenGL using GLUT. A 3d image is a
+sequence of 2d slices defining a volume. This application reads a
+binary file and opens different OpenGL windows for each slice
+direction (XY, XZ and YZ), and an additional window rendering the
+volume using 3d texture. A CT scan of a skull (ct_skull.bin) is
+provided as an example.
+
+Instalation:
+
+    Image 3D Viewer code was written and tested on Linux platform
+    using OpenGL Utility Toolkit (GLUT) for interface functions.  To
+    download and/or see more information about above dependency see:
+
+    GLUT: http://www.opengl.org/resources/libraries/glut
+
+    In order to proper compile the Image 3D Viewer code, the OpenGL
+    and GLUT libraries should have been installed in your operating
+    system.  The Makefile can be optionally edited to reflect specific
+    configurations.
+
+Usage:
+
+    Image 3D Viewer program is designed to run using a graphics card
+    with 3D texture support.  However, in the abscence of such card
+    you can comment the DWIN4 variable in the Makefile to disable the
+    fourth window which shows the volume as 3D texture.
+
+    Image 3D Viewer program runs reading the volume using the first
+    argument.  For example, run it by calling:
+
+    $ ./image3dviewer ct_skull.bin
+
+    will open the CT scan of a human skull opening the first window.
+
+    Image 3D Viewer runtime commands are:
+
+	  (s,?)	    --	show/hide slice/help information
+	  (w)	    --	write current slice in pgm format
+	  (p)	    --	keep proportion
+	  (h/v)	    --	flip slice horizontal/vertical
+    	  (up/down) --	next/previous slice
+	  (pg up)   --	next 10 slice
+	  (pg down) --	previous 10 slice
+	  (1,2,3,4) --	open window: XY, YZ, XZ, 3D
+	  (x/esc)   --	close current window
+	  (q)	    --	quit application
+
+File Formats:
+
+    .bin	--	binary file containing 3d image (volume)
