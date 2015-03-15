@@ -1,0 +1,1 @@
+A simple 3d image viewer in OpenGL using GLUT.  A 3d image is a sequence of 2d slices defining a volume.  This application reads a binary file and opens different OpenGL windows for each slice direction (XY, XZ and YZ), and an additional window rendering the volume using 3d texture.  A CT scan of a skull (ct\_skull.bin) is provided as an example.
